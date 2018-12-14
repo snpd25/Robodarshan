@@ -1,0 +1,10 @@
+<li id="project-<%= project.id %>">
+	<% @project.users.each do |pu| %>
+  <%= link_to gravatar_for(pu, size: 50), pu %>
+  <span class="user"><%= link_to pu.name, pu %></span>
+  <% end %>
+  <span class="content"><%= project.content %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(project.created_at) %> ago.
+  </span>
+</li>
