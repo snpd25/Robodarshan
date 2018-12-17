@@ -3,8 +3,14 @@
   <%= link_to gravatar_for(pu, size: 50), pu %>
   <span class="user"><%= link_to pu.name, pu %></span>
   <% end %>
-  <span class="content"><%= project.content %></span>
+  <span class="content"><%= project.content %>
+  	<%= image_tag project.picture.url if project.picture? %>
+  </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(project.created_at) %> ago.
+    <% if current_user?(project.user) %>
+    <%= link_to "delete", project, method: :delete, data: { confirm: "You sure?"} %>
+    <%= link_to "edit", project, method: :edit, data: %>
+    <% end %>
   </span>
 </li>

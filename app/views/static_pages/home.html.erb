@@ -5,10 +5,14 @@
       <section class="user_info">
         <%= render 'shared/user_info' %>
       </section>
-      <section class="project_form">
-        <%= render 'shared/project_form' %>
+      <section>
+      	<%= link_to "Start a new Project", '/projects/create' , class: "btn btn-lg btn-primary" %>
       </section>
     </aside>
+    <div class="col-md-8">
+    	<h3>Micropost Feed</h3>
+    	<%= render 'shared/feed' %>
+    </div>
   </div>
 <% else %>
 
@@ -23,6 +27,6 @@
 <h2>
 	We believe “There’s nothing a bot can’t do!!”
 </h2>
-<p> Want to manage your project in collaboration with Robodarshan, <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+<p> Want to manage your project in collaboration with Robodarshan, <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
-
+<% end %>

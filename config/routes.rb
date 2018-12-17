@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/projects', to: 'static_pages#projects'
   get '/contact', to: 'static_pages#contact'
   get '/signup', to: 'users#new'
-  get '/signup', to: 'users#create'
+  post '/signup', to: 'users#create'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'

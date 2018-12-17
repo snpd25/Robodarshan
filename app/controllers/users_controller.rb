@@ -12,12 +12,12 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(param[:id])
+  	@user = User.find(params[:id])
   	@projects = @user.projects.paginate(page: params[:page])
   end
 
   def create
-    @user = User.new(params[:user])    # Not the final implementation!
+    @user = User.new(user_params)    # Not the final implementation!
     if @user.save
     	log_in @user
     	flash[:success] = "You have successfully signed up!"
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
+      params.require(:user).permit(:name, :email, :enroll, :password,
                                    :password_confirmation)
     end
 
