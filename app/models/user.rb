@@ -1,6 +1,5 @@
 class User < ApplicationRecord
-	has_many :project_users
-	has_many :projects, through: :project_users
+	has_many :projects, dependent: :destroy
 	before_save { self.email = email.downcase }
 	validates :enroll, presence: true, length: { is: 9 } , uniqueness: true
 	validates :name, presence: true, length: {maximum: 50}
@@ -17,6 +16,6 @@ class User < ApplicationRecord
   end
 
   def feed
-  	project.where("user_id = ?", id)
+  	Project.where("user_id = ?", id)
   end
 end

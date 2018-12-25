@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 	before_action :correct_user, only: [:destroy, :edit]
 
 	def new
+		@project = Project.new
 	end
 
 	def create
@@ -12,7 +13,7 @@ class ProjectsController < ApplicationController
       redirect_to root_url
     else
     	@feed_items = []
-      render 'static_pages/home'
+      render '/projects/new'
     end
 	end
 
@@ -26,10 +27,16 @@ class ProjectsController < ApplicationController
 		@project = Project.find(params[:id])
 	end
 
+	def update
+		@project = Project.find(params[:id])
+		@project.update(title: params[:title], content: params[:content])
+		redirect_to home_path
+	end
+
 	private
 
     def project_params
-      params.require(:project).permit(:content, :picture)
+      params.require(:project).permit(:title, :content, :picture)
     end
 
     def correct_user

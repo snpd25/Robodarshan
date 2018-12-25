@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/team', to: 'static_pages#team'
   get '/workshops', to: 'static_pages#workshops'
   get '/gallery', to: 'static_pages#gallery'
-  get '/projects', to: 'static_pages#projects'
+  get '/project_under_rbd', to: 'static_pages#project_under_rbd'
   get '/contact', to: 'static_pages#contact'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
 
   resources :users
-  resources :projects, only: [:create, :destroy, :edit]
+  resources :projects, only: [:new, :create, :edit, :destroy, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

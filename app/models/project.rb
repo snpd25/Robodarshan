@@ -1,8 +1,9 @@
 class Project < ApplicationRecord
-  has_many :project_users
-  has_many :users, :through => :project_users
+  belongs_to :user
+  validates :user_id, presence: true
   default_scope -> { order(created_at: :desc)}
   mount_uploader :picture, PictureUploader
+  validates :title, presence: true
   validates :content, presence: true
   validate :picture_size
 

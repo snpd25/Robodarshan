@@ -1,16 +1,16 @@
 <li id="project-<%= project.id %>">
-	<% @project.users.each do |pu| %>
-  <%= link_to gravatar_for(pu, size: 50), pu %>
-  <span class="user"><%= link_to pu.name, pu %></span>
-  <% end %>
-  <span class="content"><%= project.content %>
+  <%= link_to gravatar_for(project.user, size: 50), project.user %>
+  <span class="user"><%= link_to project.user.name, project.user %></span>
+  <span class="content">
+  	<%= project.title %>
+  	<%= project.content %>
   	<%= image_tag project.picture.url if project.picture? %>
   </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(project.created_at) %> ago.
     <% if current_user?(project.user) %>
     <%= link_to "delete", project, method: :delete, data: { confirm: "You sure?"} %>
-    <%= link_to "edit", project, method: :edit, data: %>
+    <%= link_to "edit", "/projects/#{project.id}/edit", method: :get %>
     <% end %>
   </span>
 </li>

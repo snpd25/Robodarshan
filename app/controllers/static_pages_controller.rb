@@ -15,7 +15,7 @@ class StaticPagesController < ApplicationController
   def gallery
   end
 
-  def projects
+  def project_under_rbd
   end
 
   def contact
