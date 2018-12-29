@@ -1,9 +1,9 @@
-<%= form_for @project do |f| %>
-  <%= f.label 'Project Title' %><br>
-  <%= f.text_field :title %><br>
-
-  <%= f.label 'Project Description' %><br>
-  <%= f.text_area :content %><br>
-
-  <%= f.submit "Add changes", class: "btn btn-primary" %>
-<% end %>
+<% if logged_in? %>
+  <div class="row">
+  	<section class="project_form">
+  		<%= render 'shared/project_form' %>
+  	</section>
+  </div>
+ <% else %>
+   <h1> Please login first ! </h1>
+ <% end %>

@@ -11,9 +11,14 @@ Rails.application.routes.draw do
   get '/contact', to: 'static_pages#contact'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
+  get '/projects_approve', to: 'users#projects_approve'
+  patch '/projects_approve', to: 'projects#update'
+  get '/admin_approve', to: 'users#admin_approve'
+  patch '/admin_approve', to: 'users#update_admin'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  #get '/users', to: 'users#update'
 
   resources :users
   resources :projects, only: [:new, :create, :edit, :destroy, :update]

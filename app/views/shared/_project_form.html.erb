@@ -3,12 +3,16 @@
   <div class="field">
   	<%= f.text_area :title, placeholder: "Write the title of the project" %>
     <%= f.text_area :content, placeholder: "Write project's discription " %>
+    <%= f.label :send_for_approval, class: 'checkbox' do %>
+  <%= f.check_box :send_for_approval %>
+  Send for approval
+<% end %>
   </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
+ 
   <span class="picture">
   	<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
-
+ <%= f.submit "Post", class: "btn btn-primary" %>
 
 <% end %>
 

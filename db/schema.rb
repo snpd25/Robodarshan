@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_19_170114) do
+ActiveRecord::Schema.define(version: 2018_12_25_140425) do
 
   create_table "project_users", force: :cascade do |t|
     t.integer "user_id"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2018_12_19_170114) do
     t.datetime "updated_at", null: false
     t.string "picture"
     t.string "title"
+    t.boolean "approved", default: false
+    t.boolean "send_for_approval", default: false
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 

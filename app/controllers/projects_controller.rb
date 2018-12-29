@@ -29,14 +29,14 @@ class ProjectsController < ApplicationController
 
 	def update
 		@project = Project.find(params[:id])
-		@project.update(title: params[:title], content: params[:content])
+		@project.update(project_params)
 		redirect_to home_path
 	end
 
 	private
 
     def project_params
-      params.require(:project).permit(:title, :content, :picture)
+      params.require(:project).permit(:title, :content, :picture, :send_for_approval, :approved)
     end
 
     def correct_user

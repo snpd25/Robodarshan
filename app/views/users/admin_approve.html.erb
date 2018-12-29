@@ -1,0 +1,16 @@
+
+<% @users.each do |user| %>
+
+<%= form_for(user) do |f| %>
+<li>
+<%= gravatar_for user, size: 50 %>
+  <%= link_to user.name, user %>
+</li>
+
+<%= f.label :admin, class: 'checkbox' do %>
+  <%= f.check_box :admin %>
+  Make Admin
+<% end %>
+<%= f.submit "Confirm", class: "btn btn-primary" %>
+<% end %>
+<% end %>

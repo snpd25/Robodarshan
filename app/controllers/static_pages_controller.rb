@@ -16,6 +16,7 @@ class StaticPagesController < ApplicationController
   end
 
   def project_under_rbd
+    @users = User.paginate(page: params[:page])
   end
 
   def contact

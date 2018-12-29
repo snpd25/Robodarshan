@@ -1,0 +1,15 @@
+<% @users.each do |user| %>
+<% user.projects.each do |project| %>
+<% if project.send_for_approval? %>
+
+<%= form_for(project) do |f| %>
+<%= render project %>
+<%= f.label :approved, class: 'checkbox' do %>
+  <%= f.check_box :approved %>
+  Approve
+<% end %>
+<%= f.submit "Confirm", class: "btn btn-primary" %>
+<% end %>
+<% end %>
+<% end %>
+<% end %>
