@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+	has_many :messages
+	has_many :conversations, foreign_key: :sender_id
 	has_many :projects, dependent: :destroy
 	before_save { self.email = email.downcase }
 	validates :enroll, presence: true, length: { is: 9 } , uniqueness: true

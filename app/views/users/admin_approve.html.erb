@@ -1,5 +1,6 @@
 
 <% @users.each do |user| %>
+<% if user != current_user %>
 
 <%= form_for(user) do |f| %>
 <li>
@@ -12,5 +13,6 @@
   Make Admin
 <% end %>
 <%= f.submit "Confirm", class: "btn btn-primary" %>
+<% end %>
 <% end %>
 <% end %>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 	root 'static_pages#home'
   get '/home', to: 'static_pages#home'
   get '/team', to: 'static_pages#team'
+  get '/chat', to: 'static_pages#chat'
   get '/workshops', to: 'static_pages#workshops'
   get '/gallery', to: 'static_pages#gallery'
   get '/project_under_rbd', to: 'static_pages#project_under_rbd'
@@ -22,5 +23,11 @@ Rails.application.routes.draw do
 
   resources :users
   resources :projects, only: [:new, :create, :edit, :destroy, :update]
+  resources :conversations, only: [:create] do
+  	member do
+  		post :close
+  	end
+  	resources :messages, only: [:create]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

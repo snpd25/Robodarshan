@@ -23,7 +23,9 @@
             <% if current_user.admin? %>
     | <li><%= link_to "Approve projects", '/projects_approve', method: :get %></li>
     <li><%= link_to "Choose Admin", '/admin_approve', method: :get %></li>
+
   <% end %>
+          <li><%= link_to "chat", '/chat' %></li>
           <li><%= link_to "Users", users_path %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
