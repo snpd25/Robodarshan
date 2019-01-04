@@ -1,0 +1,9 @@
+.dropdown-menu-right.show {
+    left: -128px;
+}
+
+@media only screen and (min-width: 768px) {
+    .sn-btn {
+        visibility: hidden;
+    }
+}
