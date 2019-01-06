@@ -6,6 +6,8 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
         integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -52,6 +54,7 @@
                   <%= link_to "Log out", logout_path, method: :delete , :class => "dropdown-item"%>
                   <% else %>
                   <%= link_to "Log in", login_path , :class => "dropdown-item"%>
+                  <%= link_to "Sign up", signup_path, :class => "dropdown-item"%>
                   <% end %>
                 <div>
               </div>
@@ -61,23 +64,33 @@
     <div class="bmd-layout-container bmd-drawer-f-l bmd-drawer-overlay">
     
     <div id="dw-s2" class="bmd-layout-drawer bg-faded" style="position:fixed">
-    <header>
-      <a class="navbar-brand">Title</a>
+    <header style="padding-top:40px;">
+      <a class="navbar-brand">Robodarshan</a>
     </header>
     <ul class="list-group">
-      <a class="list-group-item">Link 1</a>
-      <a class="list-group-item">Link 2</a>
-      <a class="list-group-item">Link 3</a>
+      <%= link_to "Home", root_path , :class => "list-group-item"%>
+            <%= link_to "Our Projects", project_under_rbd_path , :class => "list-group-item"%>
+            <%= link_to "Workshops and Tutorials", workshops_path , :class => "list-group-item"%>
+            <%= link_to "Gallery", gallery_path , :class => "list-group-item"%>
+            <% if logged_in? %>
+              <% if current_user.admin? %>
+                <%= link_to "Approve projects", '/projects_approve', method: :get , :class => "list-group-item"%>
+                <%= link_to "Choose Admin", '/admin_approve', method: :get , :class => "list-group-item"%>
+              <% end %>
+              <%= link_to "chat", '/chat' , :class => "list-group-item"%>
+              <%= link_to "Users", users_path , :class => "list-group-item"%>
+
+            <% end %>
     </ul>
   </div>
 
-    <main class="bmd-layout-content">
-    <div class="container">
+    <main class="bmd-layout-content pt-5 mt-2 pb-5">
+   
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
       <%= yield %>
-    </div>
+    
   </main>
     <footer class="footer">
       <nav>

@@ -1,34 +1,76 @@
 <% provide(:title, "Home") %>
+
 <% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section>
-      	<%= link_to "Start a new Project", new_project_path , class: "btn btn-lg btn-primary" %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-    	<h3>Projects </h3>
-    	<%= render 'shared/feed' %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <%= link_to "Start a new Project", new_project_path , class: "btn btn-lg btn-primary" %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <h3>Projects </h3>
+    <%= render 'shared/feed' %>
+  </div>
+</div>
+
+<% else %>
+<div class="ihh">
+  <div class="container">
+    <div class="head-space"></div>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-7">
+        <h1>Robodarshan</h1>
+        <p>
+          ROBODARSHAN, the Robotics Society of IIEST Shibpur, is one of the most active student societies helping in
+          inculcating among students the scientific temper & zeal to show how robotics is closely related to our daily
+          world and how they make our lives easier by "AUTOMATON".</p>
+      </div>
+      <div class="col-11 col-sm-10 col-md-6 col-lg-4 mr-auto ml-auto">
+        <img src="<%= image_path('robo.gif') %>" class="img-fluid py-2" alt="Responsive image">
+      </div>
     </div>
   </div>
-
-  
-<% else %>
-
-<div class="center jumbotron">
-<h1>Robodarshan</h1>
-<p>
-  ROBODARSHAN, the Robotics Society of IIEST Shibpur, is one of the most active student societies helping in inculcating among students the scientific temper & zeal to show how robotics is closely related to our daily world and how they make our lives easier by "AUTOMATON".
-</p>
-<p>
-	Founded in 2009, the club became an official part of "Centre for Creative Expressions" in 2011 and since then the club has been progressing with leaps and bounds. Thanks to the intelligent students who become active members of this club enabling smooth functioning by occupying key positions of responsibilities. The club now operates under "HJBSIC-ROBODARSHAN", along with Student’s Innovation Centre, under the able guidance of Prof. Syed Minhaz Hossain, our professor-in-charge as well as our mentor.
-</p>
-<h2>
-	We believe “There’s nothing a bot can’t do!!”
-</h2>
-<p> Want to manage your project in collaboration with Robodarshan, <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
-<% end %>
+<div class="ihh2">
+  <div class="container">
+    <div class="head-space"></div>
+    <div class="row">
+      <div class="col-11 col-sm-9 col-md-6 col-lg-4 mr-auto ml-auto order-last order-md-first">
+        <img src="<%= image_path('robo.gif') %>" class="img-fluid py-2" alt="Responsive image">
+      </div>
+      <div class="col-12 col-md-6 col-lg-7 order-first order-md-last">
+        <h1>Who we are</h1>
+        <p>
+          Founded in 2009, the club became an official part of "Centre for Creative Expressions" in 2011 and since then
+          the
+          club has been progressing with leaps and bounds. Thanks to the intelligent students who become active members
+          of
+          this club enabling smooth functioning by occupying key positions of responsibilities. The club now operates
+          under
+          "HJBSIC-ROBODARSHAN", along with Student’s Innovation Centre, under the able guidance of Prof. Syed Minhaz
+          Hossain, our professor-in-charge as well as our mentor.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container my-3">
+  <div class="card my-3">
+    <div class="card-body">
+      <div class="row justify-content-center">
+        <h1 class="title">Robodarshan</h1>
+        <p>
+        </p>
+        <p>
+        </p>
+        <h2>
+          We believe “There’s nothing a bot can’t do!!”
+        </h2>
+        <p> Want to manage your project in collaboration with Robodarshan</p>
+        <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-success" %>
+      </div>
+    </div>
+  </div>
+  <% end %>

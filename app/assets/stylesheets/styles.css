@@ -7,3 +7,75 @@
         visibility: hidden;
     }
 }
+
+.img-header {
+    height: 120px;
+}
+
+.ihg {
+    background-color: #08AEEA;
+    background-image: linear-gradient(315deg, #08AEEA 0%, #2AF598 100%);
+}
+
+.ihws {
+    background-color: rgba(0, 33, 71, 1);
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(47, 183, 186, 1) 0%, rgba(0, 33, 71, 1) 90%);
+}
+
+.ihh {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(221, 221, 221, 1) 0.1%, #bbb 90%);
+    height: 490px;
+}
+
+.ihh2 {
+    background-image: radial-gradient(circle 767px at 10.2% 22.1%, rgba(11, 218, 80, 0.63) 0%, rgba(0, 191, 255, 0.5) 90%);
+    height: 350px;
+}
+
+.head-space {
+    height: 20px;
+}
+
+.ws-text {
+    visibility: hidden;
+    display: none;
+}
+
+.my-fab {
+    position: relative;
+    left: 86%;
+    bottom: -42px;
+}
+
+@media only screen and (min-width: 574px) {
+    -.ihh {
+        height: 450px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .img-header {
+        height: 180px;
+    }
+
+    .head-space {
+        height: 60px;
+    }
+
+    .ihh {
+        height: 320px;
+    }
+
+    .ws-text {
+        visibility: visible;
+        display: initial;
+    }
+
+}
+
+.m-icn {
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    left: -4px;
+}
