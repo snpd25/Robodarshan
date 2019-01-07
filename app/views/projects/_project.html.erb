@@ -1,16 +1,47 @@
-<li id="project-<%= project.id %>">
-  <%= link_to gravatar_for(project.user, size: 50), project.user %>
-  <span class="user"><%= link_to project.user.name, project.user %></span>
-  <span class="content">
-  	<%= project.title %>
-  	<%= project.content %>
-  	<%= image_tag project.picture.url if project.picture? %>
-  </span>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(project.created_at) %> ago.
-    <% if current_user?(project.user) %>
-    <%= link_to "delete", project, method: :delete, data: { confirm: "You sure?"} %>
-    <%= link_to "edit", "/projects/#{project.id}/edit", method: :get %>
-    <% end %>
-  </span>
-</li>
+<div id="project-<%= project.id %>">
+  <div class="card my-3 py-1">
+    <div class="card-body pb-1">
+      <div class="row">
+        <div class="pic">
+          <%= link_to gravatar_for(project.user, size: 50), project.user %>
+        </div>
+        <div class="col">
+          <p class="h5 mb-0 pt-2">
+            <%= project.title %>
+          </p>
+          <%= link_to project.user.name, project.user, :class => "text-muted h6" %>
+          <span>
+            Posted
+            <%= time_ago_in_words(project.created_at) %> ago.
+          </span>
+        </div>
+        <div class="col-12 pt-2">
+          <div class="row">
+            <%  if project.picture? %>
+            <div class="col-12 col-md-6 col-lg-7">
+              <% else %>
+              <div class="col">
+                <% end %>
+                <h6 class="text-muted">Project Details</h6>
+                <p>
+                  <%= project.content %>
+                </p>
+              </div>
+              <%  if project.picture? %>
+              <div class="col-12 col-md-6 col-lg-5">
+                <img src="<%= project.picture.url %>" class="img-fluid py-2" alt="Responsive image">
+              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="row px-3 pt-2">
+          <% if current_user?(project.user) %>
+          <%= link_to "delete", project, method: :delete, data: { confirm: "You sure to Delete?"}, :class => 'btn btn-danger' %>
+          <div class="col"></div>
+          <%= link_to "edit", "/projects/#{project.id}/edit", method: :get, :class => 'btn btn-info' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

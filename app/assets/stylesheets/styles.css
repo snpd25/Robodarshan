@@ -8,6 +8,16 @@
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .al {
+        text-align: left;
+    }
+}
+.pic {
+    width: 50px;
+    padding: 5px;
+}
+
 .img-header {
     height: 120px;
 }
@@ -48,7 +58,7 @@
 }
 
 @media only screen and (min-width: 574px) {
-    -.ihh {
+    .ihh {
         height: 450px;
     }
 }
@@ -78,4 +88,26 @@
     position: relative;
     top: -2px;
     left: -4px;
+}
+
+.page-footer {
+    padding-top: 20px;
+    color: #d4d3d3f8;
+    background-color: #000;
+}
+
+.page-footer .footer-copyright {
+    overflow: hidden;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+    color: #000;
+    background-color: #6bff15;
+}
+
+.footer-link {
+    padding: 3px 15px;
+    color: #6bff15;
 }
