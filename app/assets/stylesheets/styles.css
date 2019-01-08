@@ -92,22 +92,30 @@
 
 .page-footer {
     padding-top: 20px;
+    padding-bottom: 45px;
     color: #d4d3d3f8;
     background-color: #000;
 }
 
 .page-footer .footer-copyright {
     overflow: hidden;
-    min-height: 50px;
+    min-height: 42px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 0px;
     color: #000;
     background-color: #6bff15;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 2;
 }
 
 .footer-link {
     padding: 3px 15px;
     color: #6bff15;
+}
+.bmd-layout-content{
+    min-height: calc(100vh - 51px);
 }
