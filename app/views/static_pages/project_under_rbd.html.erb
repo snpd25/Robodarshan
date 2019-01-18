@@ -2,7 +2,16 @@
 <% @users.each do |user| %>
 <% user.projects.each do |project| %>
 <% if project.approved? %>
-<li><%= render project %></li>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <%= render project %>
+        </div>
+    </div>
+</div>
+
+
+
 <% end %>
 <% end %>
 <% end %>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Robodarshan</title>
   <%= csrf_meta_tags %>
@@ -27,8 +26,8 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <div class="navbar-nav ml-auto">
           <%= link_to "Home", root_path , :class => "nav-item nav-link"%>
-          <%= link_to "Our Projects", project_under_rbd_path , :class => "nav-item nav-link"%>
-          <%= link_to "Workshops and Tutorials", workshops_path , :class => "nav-item nav-link"%>
+          <%= link_to "Projects", project_under_rbd_path , :class => "nav-item nav-link"%>
+          <%= link_to "Workshops", workshops_path , :class => "nav-item nav-link"%>
           <%= link_to "Gallery", gallery_path , :class => "nav-item nav-link"%>
           <% if logged_in? %>
           <% if current_user.admin? %>
@@ -133,7 +132,6 @@
     });
   </script>
 </body>
-
 </html>
 
 <!---->

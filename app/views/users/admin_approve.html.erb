@@ -1,18 +1,22 @@
-
-<% @users.each do |user| %>
-<% if user != current_user %>
-
-<%= form_for(user) do |f| %>
-<li>
-<%= gravatar_for user, size: 50 %>
-  <%= link_to user.name, user %>
-</li>
-
-<%= f.label :admin, class: 'checkbox' do %>
-  <%= f.check_box :admin %>
-  Make Admin
-<% end %>
-<%= f.submit "Confirm", class: "btn btn-primary" %>
-<% end %>
-<% end %>
-<% end %>
+<div class="container my-3">
+  <div class="row">
+    <% @users.each do |user| %>
+    <% if user != current_user %>
+    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+      <div class="card">
+        <div class="card-body text-center pb-1">
+          <%= gravatar_for user, size: 100 %>
+          <%= link_to user.name, user, class: 'h5 my-1 blk' %>
+          <%= form_for(user) do |f| %>
+          <%= f.label :admin, class: 'checkbox' do %>
+          <%= f.check_box :admin %>Admin
+          <% end %>
+          <%= f.submit "Apply", class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>
