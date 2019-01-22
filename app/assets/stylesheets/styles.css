@@ -28,6 +28,10 @@
     background-image: linear-gradient(315deg, #08AEEA 0%, #2AF598 100%);
 }
 
+.ihp {
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+
 .ihws {
     background-color: rgba(0, 33, 71, 1);
     background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(47, 183, 186, 1) 0%, rgba(0, 33, 71, 1) 90%);
@@ -41,6 +45,10 @@
 .ihh2 {
     background-image: radial-gradient(circle 767px at 10.2% 22.1%, rgba(11, 218, 80, 0.63) 0%, rgba(0, 191, 255, 0.5) 90%);
     height: 350px;
+}
+
+.ihu {
+    background-image: radial-gradient(circle 702px at 11% 74.1%, rgb(116, 180, 233) 0%, #00b0ff 90%);
 }
 
 .head-space {
@@ -106,7 +114,7 @@
     justify-content: space-between;
     padding: 10px 0px;
     color: #000;
-    background-color: #6bff15;
+    background-color: #48d8ad;
     position: fixed;
     bottom: 0px;
     width: 100%;
@@ -194,12 +202,25 @@ ul {
     top: 0;
     right: 0;
 }
-a.toggle-window{
+
+a.toggle-window {
     color: rgb(0, 255, 85);
     font-size: 19px;
 }
 
+a:hover {
+    color: rgb(69, 105, 98);
+    text-decoration: none;
+}
 
+#project_picture {
+    width: 100%;
+}
+
+#project_content {
+    height: 200px;
+    border-right: 1px solid #a0a3a77a;
+}
 
 
 /*/////////////////////// ScrollBar  //////////////////////////*/

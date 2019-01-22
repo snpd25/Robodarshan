@@ -1,4 +1,10 @@
-<h1>Our Projects</h1>
+<div class="img-header ihp">
+    <div class="container">
+        <div class="head-space"></div>
+        <h1>Our Projects</h1>
+        <p>These are the projects created by our super enthusiastic students</p>
+    </div>
+</div>
 <% @users.each do |user| %>
 <% user.projects.each do |project| %>
 <% if project.approved? %>
@@ -9,9 +15,6 @@
         </div>
     </div>
 </div>
-
-
-
 <% end %>
 <% end %>
 <% end %>
