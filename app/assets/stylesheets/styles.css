@@ -23,223 +23,233 @@
     height: 120px;
 }
 
-.ihg {
-    background-color: #08AEEA;
-    background-image: linear-gradient(315deg, #08AEEA 0%, #2AF598 100%);
-}
+.gradient-overlay {
+    background: #c21500;
+    background: -webkit-linear-gradient(to left, #c21500, #ffc500);
+    background: linear-gradient(to left, #c21500, #ffc500);
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
 
-.ihp {
-    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
-}
-
-.ihws {
-    background-color: rgba(0, 33, 71, 1);
-    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(47, 183, 186, 1) 0%, rgba(0, 33, 71, 1) 90%);
-}
-
-.ihh {
-    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(221, 221, 221, 1) 0.1%, #bbb 90%);
-    height: 490px;
-}
-
-.ihh2 {
-    background-image: radial-gradient(circle 767px at 10.2% 22.1%, rgba(11, 218, 80, 0.63) 0%, rgba(0, 191, 255, 0.5) 90%);
-    height: 350px;
-}
-
-.ihu {
-    background-image: radial-gradient(circle 702px at 11% 74.1%, rgb(116, 180, 233) 0%, #00b0ff 90%);
-}
-
-.head-space {
-    height: 20px;
-}
-
-.ws-text {
-    visibility: hidden;
-    display: none;
-}
-
-.my-fab {
-    position: relative;
-    left: 86%;
-    bottom: -42px;
-}
-
-@media only screen and (min-width: 574px) {
-    .ihh {
-        height: 450px;
+    .ihg {
+        background-color: #08AEEA;
+        background-image: linear-gradient(315deg, #08AEEA 0%, #2AF598 100%);
     }
-}
 
-@media only screen and (min-width: 768px) {
-    .img-header {
-        height: 180px;
+    .ihp {
+        background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    }
+
+    .ihws {
+        background-color: rgba(0, 33, 71, 1);
+        background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(47, 183, 186, 1) 0%, rgba(0, 33, 71, 1) 90%);
+    }
+
+    .ihh {
+        background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(221, 221, 221, 1) 0.1%, #bbb 90%);
+        height: 490px;
+    }
+
+    .ihh2 {
+        background-image: radial-gradient(circle 767px at 10.2% 22.1%, rgba(11, 218, 80, 0.63) 0%, rgba(0, 191, 255, 0.5) 90%);
+        height: 350px;
+    }
+
+    .ihu {
+        background-image: radial-gradient(circle 702px at 11% 74.1%, rgb(116, 180, 233) 0%, #00b0ff 90%);
     }
 
     .head-space {
-        height: 60px;
-    }
-
-    .ihh {
-        height: 320px;
+        height: 20px;
     }
 
     .ws-text {
-        visibility: visible;
-        display: initial;
+        visibility: hidden;
+        display: none;
     }
 
-}
+    .my-fab {
+        position: relative;
+        left: 86%;
+        bottom: -42px;
+    }
 
-.m-icn {
-    vertical-align: middle;
-    position: relative;
-    top: -2px;
-    left: -4px;
-}
+    @media only screen and (min-width: 574px) {
+        .ihh {
+            height: 450px;
+        }
+    }
 
-.page-footer {
-    padding-top: 20px;
-    padding-bottom: 45px;
-    color: #d4d3d3f8;
-    background-color: #000;
-}
+    @media only screen and (min-width: 768px) {
+        .img-header {
+            height: 180px;
+        }
 
-.page-footer .footer-copyright {
-    overflow: hidden;
-    min-height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0px;
-    color: #000;
-    background-color: #48d8ad;
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    z-index: 2;
-}
+        .head-space {
+            height: 60px;
+        }
 
-.footer-link {
-    padding: 3px 15px;
-    color: #6bff15;
-}
+        .ihh {
+            height: 320px;
+        }
 
-.bmd-layout-content {
-    min-height: calc(100vh - 51px);
-}
+        .ws-text {
+            visibility: visible;
+            display: initial;
+        }
 
-.gravatar {
-    display: block;
-    margin: auto;
-}
+    }
 
-.blk {
-    display: block;
-}
+    .m-icn {
+        vertical-align: middle;
+        position: relative;
+        top: -2px;
+        left: -4px;
+    }
 
-form.edit_user {
-    margin-bottom: 0;
-}
+    .page-footer {
+        padding-top: 20px;
+        padding-bottom: 45px;
+        color: #d4d3d3f8;
+        background-color: #000;
+    }
 
-.cls-btn {
-    font-size: 25px !important;
-    top: -10px;
-    right: -20px;
-}
+    .page-footer .footer-copyright {
+        overflow: hidden;
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0px;
+        color: #000;
+        background-color: #48d8ad;
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        z-index: 2;
+    }
 
-.snd-btn {
-    top: 10px;
-    right: 5px;
-}
+    .footer-link {
+        padding: 3px 15px;
+        color: #6bff15;
+    }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+    .bmd-layout-content {
+        min-height: calc(100vh - 51px);
+    }
 
-.msg {
-    display: block;
-    padding: 2px 10px;
-    max-width: 90%;
-}
+    .gravatar {
+        display: block;
+        margin: auto;
+    }
 
-.message-sent .msg {
-    background-color: #00ff55a6;
-    border-radius: 10px 10px 2px 10px;
-}
+    .blk {
+        display: block;
+    }
 
-.message-sent {
-    justify-content: flex-end;
-}
+    form.edit_user {
+        margin-bottom: 0;
+    }
 
-.message-received .msg {
-    background-color: #6f00ff4d;
-    border-radius: 2px 10px 10px 10px;
-}
+    .cls-btn {
+        font-size: 25px !important;
+        top: -10px;
+        right: -20px;
+    }
 
-.chat {
-    padding: 0 8px;
-    margin: 5px 18px;
-    font-size: 18px;
-    line-height: 1.8;
-    position: relative;
-    display: flex;
-}
+    .snd-btn {
+        top: 10px;
+        right: 5px;
+    }
 
-.messages-list {
-    overflow: auto;
-    max-height: 320px;
-}
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
 
-.new_message {
-    margin: 0;
-}
+    .msg {
+        display: block;
+        padding: 2px 10px;
+        max-width: 90%;
+    }
 
-.card-close {
-    top: 0;
-    right: 0;
-}
+    .message-sent .msg {
+        background-color: #00ff55a6;
+        border-radius: 10px 10px 2px 10px;
+    }
 
-a.toggle-window {
-    color: rgb(0, 255, 85);
-    font-size: 19px;
-}
+    .message-sent {
+        justify-content: flex-end;
+    }
 
-a:hover {
-    color: rgb(69, 105, 98);
-    text-decoration: none;
-}
+    .message-received .msg {
+        background-color: #6f00ff4d;
+        border-radius: 2px 10px 10px 10px;
+    }
 
-#project_picture {
-    width: 100%;
-}
+    .chat {
+        padding: 0 8px;
+        margin: 5px 18px;
+        font-size: 18px;
+        line-height: 1.8;
+        position: relative;
+        display: flex;
+    }
 
-#project_content {
-    height: 200px;
-    border-right: 1px solid #a0a3a77a;
-}
+    .messages-list {
+        overflow: auto;
+        max-height: 320px;
+    }
+
+    .new_message {
+        margin: 0;
+    }
+
+    .card-close {
+        top: 0;
+        right: 0;
+    }
+
+    a.toggle-window {
+        color: rgb(0, 255, 85);
+        font-size: 19px;
+    }
+
+    a:hover {
+        color: rgb(69, 105, 98);
+        text-decoration: none;
+    }
+
+    #project_picture {
+        width: 100%;
+    }
+
+    #project_content {
+        height: 200px;
+        border-right: 1px solid #a0a3a77a;
+    }
 
 
-/*/////////////////////// ScrollBar  //////////////////////////*/
-/* width */
-::-webkit-scrollbar {
-    width: 6px;
-}
+    /*/////////////////////// ScrollBar  //////////////////////////*/
+    /* width */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
-}
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
