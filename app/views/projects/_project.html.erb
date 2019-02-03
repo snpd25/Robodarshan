@@ -4,7 +4,9 @@
   <span class="content">
   	<%= project.title %>
   	<%= project.content %>
-  	<%= image_tag project.picture.url if project.picture? %>
+  	<% project.pictures.each do |p| %>
+  	<%= image_tag p.url %>
+  	<% end %>
   </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(project.created_at) %> ago.

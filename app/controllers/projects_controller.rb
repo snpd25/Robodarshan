@@ -36,7 +36,7 @@ class ProjectsController < ApplicationController
 	private
 
     def project_params
-      params.require(:project).permit(:title, :content, :picture, :send_for_approval, :approved)
+      params.require(:project).permit(:title, :content, :send_for_approval, :approved, pictures: [])
     end
 
     def correct_user

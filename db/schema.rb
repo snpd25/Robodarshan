@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_12_29_091544) do
     t.string "title"
     t.boolean "approved", default: false
     t.boolean "send_for_approval", default: false
+    t.json "pictures"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 

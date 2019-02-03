@@ -9,8 +9,9 @@
 <% end %>
   </div>
  
-  <span class="picture">
-  	<%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+  <span class="pictures">
+  	<%= f.label :pictures %>
+  	<%= f.file_field :pictures, multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
   </span>
  <%= f.submit "Post", class: "btn btn-primary" %>
 
