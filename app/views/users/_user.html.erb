@@ -1,13 +1,16 @@
 <div class="col-6 col-sm-4 col-md-3 col-lg-2">
   <div class="card">
-    <div class="card-body text-center pb-1">
+    <div class="card-body text-center pb-2">
       <%= gravatar_for user, size: 100 %>
-      <%= link_to user.name, user, class: 'h5' %>
+      <%= link_to user.name, user, class: 'h5 pt-2' %>
       <% if user != current_user %>
+      <div class="dropdown-divider"></div>
       <%= link_to "Message me", conversations_path(user_id: user), remote: true, method: :post %>
+      <br/>
       (<%= link_to "see chats", chat_path %>)
       <% end %>
       <% if current_user.admin? && !current_user?(user) %>
+      <br/>
       <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %>
       <% end %>
     </div>
