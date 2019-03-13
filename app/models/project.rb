@@ -2,10 +2,10 @@ class Project < ApplicationRecord
   belongs_to :user
   validates :user_id, presence: true
   default_scope -> { order(created_at: :desc)}
-  mount_uploader :picture, PictureUploader
+  mount_uploaders :pictures, PictureUploader
   validates :title, presence: true
   validates :content, presence: true
-  validate :picture_size
+  #Svalidate :picture_size
 
   private
 

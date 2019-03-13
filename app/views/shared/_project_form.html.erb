@@ -31,6 +31,10 @@
           </div>
           <% end %>
         </div>
+        <span class="pictures">
+  	      <%= f.label :pictures %>
+  	      <%= f.file_field :pictures, multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
+        </span>
         <div class="row px-2 justify-content-end">
           <%= f.submit "Post", class: "btn btn-success" %>
           <% end %>
@@ -40,6 +44,11 @@
     </div>
   </div>
 </div>
+
+
+ <%= f.submit "Post", class: "btn btn-primary" %>
+
+<% end %>
 
 <script type="text/javascript">
   $('#micropost_picture').bind('change', function () {
