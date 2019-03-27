@@ -1,24 +1,5 @@
-# README
+This is an app to manage the display of the projects.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The students/users can write about their projects and can send it to the admin for approval to publish it and once approved it will be displayed to all the visitors of the website.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Supports ruby version 2.4.1 and above.
