@@ -1,15 +1,19 @@
-<% @users.each do |user| %>
-<% user.projects.each do |project| %>
-<% if project.send_for_approval? %>
-
-<%= form_for(project) do |f| %>
-<%= render project %>
-<%= f.label :approved, class: 'checkbox' do %>
-  <%= f.check_box :approved %>
-  Approve
-<% end %>
-<%= f.submit "Confirm", class: "btn btn-primary" %>
-<% end %>
-<% end %>
-<% end %>
-<% end %>
+<div class="container my-3">
+  <% @users.each do |user| %>
+  <% user.projects.each do |project| %>
+  <% if project.send_for_approval? %>
+  <%= form_for(project) do |f| %>
+  <%= render project %>
+  <div class="row justify-content-end">
+    <%= f.label :approved, class: 'checkbox py-3 mb-1' do %>
+    <%= f.check_box :approved %>
+    Approved
+    <% end %>
+    <%= f.submit "Confirm", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <% end %>
+  <div class="dropdown-divider"></div>
+  <% end %>
+  <% end %>
+</div>

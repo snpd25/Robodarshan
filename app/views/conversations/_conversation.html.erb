@@ -1,24 +1,28 @@
-      <li>
-  <div class="panel panel-default" data-conversation-id="<%= conversation.id %>">
-    <div class="panel-heading">
-      <%= link_to conversation.opposed_user(user).email, '', class: 'toggle-window' %>
-      <%= link_to "x", close_conversation_path(conversation), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %>
-    </div>
+<li>
+  <div class="card my-2">
+    <div class="card-body py-2">
+      <div class="" data-conversation-id="<%= conversation.id %>">
+        <div class="row">
+          <%= link_to conversation.opposed_user(user).email, '', class: 'toggle-window px-2' %>
+          <div class="col"></div>
+          <%= link_to "<i class='material-icons' style='padding-top:4px'>close</i>".html_safe, close_conversation_path(conversation), class: "btn btn-danger bmd-btn-icon card-close", remote: true, method: :post %>
+        </div>
 
-    <div class="panel-body" style="display: none;">
-      <div class="messages-list">
-        <ul>
-          <%= render 'conversations/conversation_content', messages: conversation.messages, user: user %>
-        </ul>
+        <div class="panel-body" style="display: none;">
+          <div class="messages-list">
+            <ul>
+              <%= render 'conversations/conversation_content', messages: conversation.messages, user: user %>
+            </ul>
+          </div>
+          <%= form_for [conversation, conversation.messages.new], remote: true do |f| %>
+          <%= f.hidden_field :user_id, value: user.id %>
+          <%= f.text_area :body, class: "form-control" %>
+          <div class="text-right">
+            <%= f.submit "Send", class: "btn btn-success" %>
+          </div>
+          <% end %>
+        </div>
       </div>
-      <%= form_for [conversation, conversation.messages.new], remote: true do |f| %>
-        <%= f.hidden_field :user_id, value: user.id %>
-        <%= f.text_area :body, class: "form-control" %>
-        <%= f.submit "Send", class: "btn btn-success" %>
-      <% end %>
-    </div>
-  </div>
-</li>
     </div>
   </div>
 </li>

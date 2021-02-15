@@ -1,34 +1,77 @@
 <% provide(:title, "Home") %>
 <% if logged_in? %>
+<div class="container my-3">
   <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-      <section>
-      	<%= link_to "Start a new Project", new_project_path , class: "btn btn-lg btn-primary" %>
-      </section>
-    </aside>
-    <div class="col-md-8">
-    	<h3>Projects </h3>
-    	<%= render 'shared/feed' %>
+    <div class="col-12 col-md-4 justify-content-center text-center my-2">
+      <%= render 'shared/user_info' %>
+    </div>
+    <div class="col-12 col-md-8 my-2">
+      <div>
+        <h3>Projects</h3>
+        <%= render 'shared/feed' %>
+      </div>
     </div>
   </div>
-
-  
-<% else %>
-
-<div class="center jumbotron">
-<h1>Robodarshan</h1>
-<p>
-  ROBODARSHAN, the Robotics Society of IIEST Shibpur, is one of the most active student societies helping in inculcating among students the scientific temper & zeal to show how robotics is closely related to our daily world and how they make our lives easier by "AUTOMATON".
-</p>
-<p>
-	Founded in 2009, the club became an official part of "Centre for Creative Expressions" in 2011 and since then the club has been progressing with leaps and bounds. Thanks to the intelligent students who become active members of this club enabling smooth functioning by occupying key positions of responsibilities. The club now operates under "HJBSIC-ROBODARSHAN", along with Student’s Innovation Centre, under the able guidance of Prof. Syed Minhaz Hossain, our professor-in-charge as well as our mentor.
-</p>
-<h2>
-	We believe “There’s nothing a bot can’t do!!”
-</h2>
-<p> Want to manage your project in collaboration with Robodarshan, <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
-<% end %>
+
+<% else %>
+<div class="ihh">
+  <div class="container">
+    <div class="head-space"></div>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-7">
+        <h1>Robodarshan</h1>
+        <p>
+          ROBODARSHAN, the Robotics Society of IIEST Shibpur, is one of the most active student societies helping in
+          inculcating among students the scientific temper & zeal to show how robotics is closely related to our daily
+          world and how they make our lives easier by "AUTOMATON".</p>
+      </div>
+      <div class="col-11 col-sm-10 col-md-6 col-lg-4 mr-auto ml-auto">
+        <img src="<%= image_path('robo.gif') %>" class="img-fluid py-2" alt="Responsive image">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="ihh2">
+  <div class="container">
+    <div class="head-space"></div>
+    <div class="row">
+      <div class="col-11 col-sm-9 col-md-6 col-lg-4 mr-auto ml-auto order-last order-md-first">
+        <img src="<%= image_path('robo.gif') %>" class="img-fluid py-2" alt="Responsive image">
+      </div>
+      <div class="col-12 col-md-6 col-lg-7 order-first order-md-last">
+        <h1>Who we are</h1>
+        <p>
+          Founded in 2009, the club became an official part of "Centre for Creative Expressions" in 2011 and since then
+          the
+          club has been progressing with leaps and bounds. Thanks to the intelligent students who become active members
+          of
+          this club enabling smooth functioning by occupying key positions of responsibilities. The club now operates
+          under
+          "HJBSIC-ROBODARSHAN", along with Student’s Innovation Centre, under the able guidance of Prof. Subhasis
+          Bhaumik, our professor-in-charge as well as our mentor.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container my-3">
+  <div class="card my-3">
+    <div class="card-body">
+      <div class="row justify-content-center">
+        <h1 class="title">Robodarshan</h1>
+        <div class="divider"></div>
+        <h2>
+          We believe “There’s nothing a bot can’t do!!”
+        </h2>
+        <p> Want to manage your project in collaboration with Robodarshan</p>
+        <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-success" %>
+      </div>
+    </div>
+  </div>
+  <div class="card my-3">
+    <div class="card-body">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14738.17325676312!2d88.30011662666017!3d22.558774067895907!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0279c91a8d2d49%3A0xc6ee508c74cf031d!2sIndian+Institute+of+Engineering+Science+And+Technology%2C+Shibpur!5e0!3m2!1sen!2sin!4v1549805899073"
+        width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+  </div>
+  <% end %>

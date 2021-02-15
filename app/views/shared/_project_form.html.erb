@@ -1,28 +1,60 @@
-<%= form_for(@project) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-  	<%= f.text_area :title, placeholder: "Write the title of the project" %>
-    <%= f.text_area :content, placeholder: "Write project's discription " %>
-    <%= f.label :send_for_approval, class: 'checkbox' do %>
-  <%= f.check_box :send_for_approval %>
-  Send for approval
-<% end %>
+<div class="container my-3">
+  <div class="row pt-3">
+    <div class="col mx-auto">
+      <div class="card card-body pb-2 mx-1">
+          <h3>Project</h3>
+        <%= form_for(@project) do |f| %>
+        <div class="row">
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="form-group">
+              <%= f.label :project_title, class: 'bmd-label-floating' %>
+              <%= f.text_field :title, class: 'form-control'%>
+            </div>
+            <div class="text-center form-group">
+              <span class="picture">
+                <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', class: 'btn btn-info' %>
+              </span>
+            </div>
+          </div>
+          <div class="col-12 col-md-8 col-lg-9">
+            <div class="form-group">
+              <%= f.text_area :content, class: 'form-control' %>
+              <%= f.label :full_description_of_the_project, class: 'bmd-label-floating' %>
+            </div>
+          </div>
+        </div>
+        <div class="row px-2 justify-content-end">
+          <%= f.label :send_for_approval, class: 'checkbox' do %>
+          <div class="checkbox">
+            <%= f.check_box :send_for_approval %>
+            Send for approval
+          </div>
+          <% end %>
+        </div>
+        <span class="pictures">
+  	      <%= f.label :pictures %>
+  	      <%= f.file_field :pictures, multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
+        </span>
+        <div class="row px-2 justify-content-end">
+          <%= f.submit "Post", class: "btn btn-success" %>
+          <% end %>
+        </div>
+        </form>
+      </div>
+    </div>
   </div>
- 
-  <span class="pictures">
-  	<%= f.label :pictures %>
-  	<%= f.file_field :pictures, multiple: true, accept: 'image/jpeg,image/gif,image/png' %>
-  </span>
+</div>
+
+
  <%= f.submit "Post", class: "btn btn-primary" %>
 
 <% end %>
 
 <script type="text/javascript">
-  $('#micropost_picture').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
+  $('#micropost_picture').bind('change', function () {
+    var size_in_megabytes = this.files[0].size / 1024 / 1024;
     if (size_in_megabytes > 5) {
       alert('Maximum file size is 5MB. Please choose a smaller file.');
     }
   });
 </script>
-

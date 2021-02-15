@@ -1,2 +1,120 @@
-<h1>StaticPages#gallery</h1>
-<p>Find me in app/views/static_pages/gallery.html.erb</p>
+<div class="img-header ihg">
+    <div class="container">
+        <div class="head-space"></div>
+        <h1>Gallery</h1>
+        <p>Some text here</p>
+    </div>
+</div>
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12 col-lg-10 col-xl-9 mr-auto ml-auto">
+            <div class="card my-4">
+                <div class="card-body">
+                    <h5 class="card-title">Album title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Album details</h6>
+                    <div class="row">
+                        <div class="col-12 col-lg-8">
+                            <img src="<%= image_path('dummy.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                        </div>
+                        <div class="col col-lg-4">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-12">
+                                    <img src="<%= image_path('dummy.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                                </div>
+                                <div class="col-md-6 col-lg-12">
+                                    <img src="<%= image_path('dummy.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="collapse" id="album1">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                <img src="<%= image_path('dummy.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                <img src="<%= image_path('dummy.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                <img src="<%= image_path('dummy.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                <img src="<%= image_path('dummy.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                            </div>
+                        </div>
+                    </div>
+                    <a class="exp-btn" data-toggle="collapse" href="#album1" aria-expanded="false" aria-controls="album2">
+                        <button type="button" class="btn btn-danger bmd-btn-fab my-fab">
+                            <i class="material-icons exp-icon">expand_more</i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="card my-4">
+                <div class="card-body">
+                    <h5 class="card-title">Album title</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Album details</h6>
+                    <div class="row">
+                        <div class="col col-lg-4">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-12">
+                                    <img src="<%= image_path('169.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                                </div>
+                                <div class="col-md-6 col-lg-12">
+                                    <img src="<%= image_path('169.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-8">
+                            <img src="<%= image_path('169.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                        </div>
+                    </div>
+                    <div class="collapse" id="album2">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                <img src="<%= image_path('169.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                <img src="<%= image_path('169.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                <img src="<%= image_path('169.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                                <img src="<%= image_path('169.jpg') %>" class="img-fluid py-2" alt="Responsive image">
+                            </div>
+                        </div>
+                    </div>
+                    <a class="exp-btn" data-toggle="collapse" href="#album2" aria-expanded="false" aria-controls="album2">
+                        <button type="button" class="btn btn-danger bmd-btn-fab my-fab">
+                            <i class="material-icons exp-icon">expand_more</i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    /*  var expBtn = document.querySelectorAll('.exp-btn');
+
+    function check() {
+        expBtn.forEach((link) => {
+            let exp = link.getAttribute("aria-expanded");
+            if (exp == "false") {
+                link.childNodes[1].childNodes[1].innerHTML = "expand_less"
+            } else if (exp=="true") {
+                link.childNodes[1].childNodes[1].innerHTML = "expand_more"
+            } else {
+            } 
+        })
+        console.log("check");
+    };
+
+    expBtn.forEach((link) => {
+        link.addEventListener('click', check);
+    });
+*/
+</script>

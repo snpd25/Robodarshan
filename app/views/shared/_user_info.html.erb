@@ -1,5 +1,20 @@
-<%= link_to gravatar_for(current_user, size: 50), current_user %>
-<h1><%= current_user.name %></h1>
-<span><%= link_to "view my profile", current_user %></span>
-
-<span><%= pluralize(current_user.projects.count, "Project") %></span>
+<div class="card card-body">
+    <div class="row">
+        <div class="col col-md-12">
+            <%= link_to gravatar_for(current_user, size: 150), current_user %>
+        </div>
+        <div class="col col-md-12 al">
+            <h3 class="text-muted">
+                <%= current_user.name %>
+            </h3>
+            <h6>
+                <%= link_to "View Profile", current_user %>
+            </h6>
+            <span>
+                <%= pluralize(current_user.projects.count, "Project") %></span>
+            <div class="row justify-content-center mt-3">
+                <%= link_to "Start a new Project", new_project_path , class: "btn btn-raised btn-success" %>
+            </div>
+        </div>
+    </div>
+</div>
